@@ -15,6 +15,7 @@ LEFT JOIN molecule_synonyms        as ms  ON act.molregno = ms.molregno         
 
     WHERE 1
         AND (pp.description IS NULL OR pp.description IN ("coronavirus"))
+        AND (td.organism LIKE "%coronavirus%")
 
     GROUP BY td.chembl_id,md.chembl_id                                                                    -- Agrupar por par proteína-ligando
 
