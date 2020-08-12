@@ -1,6 +1,6 @@
 
 SELECT   td.chembl_id, md.chembl_id, MIN(pp.accession), MIN(pp.description), GROUP_CONCAT(DISTINCT do.source_domain_id), MIN(act.standard_value),AVG(act.standard_value) , MAX(act.standard_value), MIN(canonical_smiles),MIN(pp.organism), MAX(md.max_phase), MAX(pp.sequence), MAX(act.standard_relation), MAX(act.activity_comment)
-FROM assays
+--FROM assays
 INNER JOIN activities              as act ON assays.assay_id = act.assay_id        -- Tabla maestra para interacciones proteina-ligando
 INNER JOIN confidence_score_lookup as csl
 INNER JOIN target_dictionary       as td  ON assays.tid = td.tid                   -- Datos: Proteina "Target"
